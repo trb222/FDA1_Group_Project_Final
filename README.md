@@ -2,7 +2,7 @@
 
 A Streamlit web application that uses historical stock data and technical indicators to predict the next day's stock price movement (Up/Down) using various machine learning and statistical models.
 
-![Screenshot Placeholder](placeholder.png)
+![Screenshot Placeholder]("C:\Users\thoma\Pictures\Screenshots\Screenshot 2025-04-30 102753.png")
 *(Suggestion: Replace `placeholder.png` with an actual screenshot of your running application)*
 
 ## Overview
