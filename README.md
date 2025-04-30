@@ -1,1 +1,126 @@
-# FDA1_Group_Project_Final
+# 📈 Stock Market Prediction Dashboard
+
+A Streamlit web application that uses historical stock data and technical indicators to predict the next day's stock price movement (Up/Down) using various machine learning and statistical models.
+
+![Screenshot Placeholder](placeholder.png)
+*(Suggestion: Replace `placeholder.png` with an actual screenshot of your running application)*
+
+## Overview
+
+This dashboard provides tools for:
+
+1.  **Visualizing Historical Stock Data:** Fetches data from Yahoo Finance (`yfinance`) and displays interactive candlestick charts.
+2.  **Analyzing Technical Indicators:** Calculates and plots common indicators like SMA, EMA, RSI, MACD, and Bollinger Bands.
+3.  **Predicting Price Movement:** Trains Machine Learning (Random Forest, XGBoost) or Statistical (ARIMA) models on historical data and features to predict if the stock price will increase or decrease the next day.
+4.  **Evaluating Model Performance:** Shows accuracy, classification reports, confusion matrices, and feature importance for ML models.
+5.  **Reporting Predictions:** Keeps a log of predictions made during the session.
+
+## Features
+
+* **Data Fetching:** Loads historical stock data for a user-specified ticker symbol and date range.
+* **Interactive Charts:**
+    * Candlestick price chart.
+    * Plots for SMA, EMA, RSI, MACD, and Bollinger Bands.
+* **Prediction Models:**
+    * **Random Forest Classifier:** Ensemble learning method.
+    * **XGBoost Classifier:** Gradient boosting framework.
+    * **ARIMA:** Time series forecasting model (requires `statsmodels`).
+* **Feature Engineering:** Automatically calculates features like moving averages, RSI, MACD, Bollinger Bands, daily returns, volatility, volume changes, and lagged features.
+* **Model Evaluation:** Provides metrics (Accuracy, Precision, Recall, F1-Score) and visualizations (Confusion Matrix, Feature Importance) for ML models.
+* **Hyperparameter Tuning:** Optional Randomized Search CV for finding better parameters for Random Forest and XGBoost.
+* **Next-Day Prediction:** Offers a prediction (Up/Down) and a confidence score for the next trading day.
+* **Prediction Reporting:** Saves predictions made in the current session and allows downloading them as a CSV.
+* **User-Friendly Interface:** Built with Streamlit for easy interaction.
+
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+    cd your-repository-name
+    ```
+
+2.  **Create and activate a virtual environment (Recommended):**
+    ```bash
+    # Windows
+    python -m venv venv
+    .\venv\Scripts\activate
+
+    # macOS/Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3.  **Create a `requirements.txt` file** with the following content:
+    ```txt
+    streamlit
+    pandas
+    numpy
+    yfinance
+    matplotlib
+    plotly
+    scikit-learn
+    xgboost
+    statsmodels # Optional: Needed for ARIMA model
+    ```
+
+4.  **Install the dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+    *Note: If you don't need the ARIMA model, you can omit `statsmodels` from `requirements.txt`.*
+
+## Usage
+
+1.  Ensure your virtual environment is activated.
+2.  Run the Streamlit application:
+    ```bash
+    streamlit run your_script_name.py
+    ```
+    *(Replace `your_script_name.py` with the actual name of your Python file)*
+
+3.  The application will open in your default web browser.
+4.  **Use the Sidebar:**
+    * Enter a valid stock ticker symbol (e.g., `AAPL`, `MSFT`, `GOOGL`).
+    * Select the desired date range for historical data.
+    * Navigate between the `Dashboard`, `Predictions`, and `Reports` pages.
+5.  **Dashboard Page:** View stock info, price charts, and technical indicators.
+6.  **Predictions Page:**
+    * Select a prediction model (Random Forest, XGBoost, ARIMA).
+    * Adjust model parameters (or use Auto-Tune for RF/XGBoost).
+    * Click "Train Model" to train the selected model and see evaluation results.
+    * View the next-day prediction and confidence score.
+7.  **Reports Page:** See a summary table of predictions made during the session and download them.
+
+## Model Details
+
+* **Input Features:** The ML models (Random Forest, XGBoost) use a combination of technical indicators (SMA, EMA, RSI, MACD, BB), volume-based features (OBV, Volume Change), price-based features (Daily Return, Daily Range), and lagged values of these features.
+* **Target Variable:** The goal is to predict whether the next day's closing price (`Close.shift(-1)`) will be higher than the current day's closing price (`Close`). This is framed as a binary classification problem (1 for Up, 0 for Down).
+* **ARIMA:** This model uses only the historical closing prices to forecast the next value. The prediction (Up/Down) is based on whether the forecasted value is higher than the last known closing price.
+
+## Disclaimer
+
+**This tool is for educational and informational purposes only.** Stock market prediction is inherently uncertain and involves significant risk. The predictions generated by this application are based on historical data patterns and do not guarantee future results. **Do not use this tool as the sole basis for making financial decisions.** Always conduct your own thorough research and consult with a qualified financial advisor before investing.
+
+## Dependencies
+
+* Python 3.8+
+* Streamlit
+* Pandas
+* NumPy
+* yfinance
+* Matplotlib
+* Plotly
+* Scikit-learn
+* XGBoost
+* Statsmodels (Optional, for ARIMA)
+
+*(See `requirements.txt` for specific versions)*
+
+## License
+
+*(Optional: Add license information here, e.g., MIT License)*
+
+## Contributing
+
+*(Optional: Add guidelines for contributing if you want others to contribute)*# FDA1_Group_Project_Final
