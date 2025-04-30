@@ -2,8 +2,6 @@
 
 A Streamlit web application that uses historical stock data and technical indicators to predict the next day's stock price movement (Up/Down) using various machine learning and statistical models.
 
-![Screenshot Placeholder]("C:\Users\thoma\Pictures\Screenshots\Screenshot 2025-04-30 102753.png")
-*(Suggestion: Replace `placeholder.png` with an actual screenshot of your running application)*
 
 ## Overview
 
@@ -36,7 +34,7 @@ This dashboard provides tools for:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+    git clone [https://github.com/trb222/FDA1_Group_Project_Final](https://github.com/trb222/FDA1_Group_Project_Final)
     cd your-repository-name
     ```
 
