@@ -73,9 +73,9 @@ This dashboard provides tools for:
 1.  Ensure your virtual environment is activated.
 2.  Run the Streamlit application:
     ```bash
-    streamlit run your_script_name.py
+    streamlit run main_apptest.py
     ```
-    *(Replace `your_script_name.py` with the actual name of your Python file)*
+    
 
 3.  The application will open in your default web browser.
 4.  **Use the Sidebar:**
